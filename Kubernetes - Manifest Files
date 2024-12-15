@@ -1,0 +1,35 @@
+Kubernetes manifest files are YAML files used to define the configuration of Kubernetes resources, such as Pods, Deployments, Services, ConfigMaps, etc.
+
+Best Practices:
+
+Organize by Environment: Keep different manifests for different environments (dev, staging, prod) in separate folders.
+Use kubectl apply -k for Kustomization: For easier environment management, use Kustomize to manage environment-specific configurations.
+
+========================================================================================================================================================================================================================
+Sample Code::::
+========================================================================================================================================================================================================================
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app
+          image: my-app:latest
+========================================================================================================================================================================================================================
+
+
+Resource Requests and Limits: Always specify CPU and memory requests/limits for containers to ensure efficient resource allocation.
+Use ConfigMaps and Secrets: Store sensitive data in Secrets and configuration data in ConfigMaps instead of hardcoding them in the manifests.
+Version Control: Keep Kubernetes manifests in version control, separate from application code.
+Labels and Annotations: Use clear and consistent labels and annotations for identifying and managing resources.
