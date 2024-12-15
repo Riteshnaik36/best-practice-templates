@@ -1,0 +1,1 @@
+Terraform configuration files are used to define infrastructure as code (IaC). The configuration is usually written in HCL (HashiCorp Configuration Language).
