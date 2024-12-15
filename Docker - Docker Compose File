@@ -1,0 +1,21 @@
+A Docker Compose file (docker-compose.yml) is used to define and run multi-container Docker applications. It allows you to configure multiple services, networks, and volumes required for your application to run.
+
+Best Practices:
+
+Version Control: Store your docker-compose.yml file in version control alongside your application code.
+Use .env for Environment Variables: Store environment-specific settings in .env files and refer to them in your docker-compose.yml.
+================================================================================================================================================================================
+sample Code:::
+================================================================================================================================================================================
+version: '3.8'
+services:
+  web:
+    image: webapp:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - DEBUG=${DEBUG_MODE}
+================================================================================================================================================================================
+Keep services isolated: Define different containers for different services (e.g., database, application, etc.).
+Use Named Volumes: Use volumes for persistent data (e.g., database data), ensuring data is not lost when containers are stopped or recreated.
+Use depends_on: Ensure that dependencies are started in the correct order, though consider using health checks for more reliability.
