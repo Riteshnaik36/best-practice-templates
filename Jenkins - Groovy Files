@@ -24,3 +24,9 @@ pipeline {
         }
     }
 }
+==================================================================================================================
+Avoid hardcoding: Store credentials and sensitive data in Jenkins' credentials store, not directly in the Jenkinsfile.
+Use Parallel Steps: To speed up the pipeline, use parallel stages where possible.
+Pipeline as Code: Version control your Jenkinsfiles alongside application code.
+Use Shared Libraries: For common tasks across multiple pipelines, store reusable functions in a shared library.
+
