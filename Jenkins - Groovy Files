@@ -1,0 +1,26 @@
+Groovy files in Jenkins are primarily used for defining Jenkins Pipelines (typically Jenkinsfile) or for scripting jobs via Jenkins Shared Libraries. 
+Jenkinsfile
+This file defines the entire pipeline structure (stages, steps, etc.) and integrates with the Jenkins server for Continuous Integration/Continuous Deployment (CI/CD) processes.
+A typical Jenkinsfile contains stages like Build, Test, Deploy, etc.
+==================================================================================================================
+Best Practices:
+Declarative Pipeline: Use declarative syntax for readability and maintainability
+==================================================================================================================
+sample code:::: 
+==================================================================================================================
+
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        stage('Test') {
+            steps {
+                sh 'mvn test'
+            }
+        }
+    }
+}
